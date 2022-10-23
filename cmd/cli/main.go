@@ -16,7 +16,7 @@ const (
 	updatePeriod  = "1200ms"
 	requestPeriod = "1500ms"
 
-	confFile = "/opt/pps_conf.json"
+	confFile = "pps_conf.json"
 )
 
 var (

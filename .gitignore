@@ -2,4 +2,3 @@ out/
 bin/
 .idea_modules/
 .idea
-go.sum
