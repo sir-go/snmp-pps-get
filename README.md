@@ -1,4 +1,5 @@
 # CLI tool for monitoring PPS on the D-Link switches by ports
+[![Go](https://github.com/sir-go/snmp-pps-get/actions/workflows/go.yml/badge.svg)](https://github.com/sir-go/snmp-pps-get/actions/workflows/go.yml)
 
 CLI utility periodically gets packets-per-second statistic of given devices and print it as a table.
 
