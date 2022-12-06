@@ -1,22 +1,25 @@
 # CLI tool for monitoring PPS on the D-Link switches by ports
 
+CLI utility periodically gets packets-per-second statistic of given devices and print it as a table.
+
 ## Build
 ```bash
+go test ./...
+gosec ./...
 go mod download && go build -o pps ./cmd/cli
 ```
 
 ## Flags
-`<ip0> <ip1> ... ` - target switches IP addresses
+`<ip0> <ip1>:<posts> ... ` - target switches IP addresses, can be an IP or IP:ports-range, i.e.:
+`10.10.0.1 10.15.0.12:1-5 192.168.28.26:14,17,20-25`
 
 ## Config
-`pps_conf.json` must be located in the same directory. It contains the array of SNMP OIDs for getting metrics
+`config.yml` must be located in the same directory. It contains the array of SNMP OIDs for getting metrics
 (TX and RX PPS) by the switch model name and default values.
-
-The SNMP community `public` is hardcoded into `switch.go` as constant (todo: make as variable)
 
 ## Usage
 ```bash
-pps <ip0> <ip1> ... <ipN>
+pps <ip0> <ip1>:<ports> ... <ipN>
 ```
 
 ![](pps.gif)
